@@ -1,0 +1,16 @@
+<h1>Backers for "<%= link_to @project.name, project_path(@project) %>" </h1>
+<h3>Thanks to all our contributors!</h3>
+
+<% @project.backers.each do |backer| %>
+  <p>Backer's Name: <%= link_to backer.name, backer_path(backer) %></p>
+    <% projectb = ProjectBacker.all.select do |pb| %>
+      <% pb.project == @project && pb.backer == backer%>
+    <% end %>
+    <% counter = 0 %>
+    <% projectb.each do |pb| %>
+      <% if pb %>
+        <% counter += pb.contributed_amount.to_i %>
+      <% end %>
+    <% end %>
+  <p>Amount Contributed: $<%= counter %></p>
+<% end %>

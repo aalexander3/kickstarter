@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :contribute, :add_contribution, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :contribute, :add_contribution, :contributor_list, :destroy]
 
   def index
     @projects = Project.all
   end
 
   def show
+  end
+
+  def contributor_list
   end
 
   def new
@@ -23,7 +26,7 @@ class ProjectsController < ApplicationController
   def update
     @backer = Backer.find(params[:backer][:backer_id])
     if @backer
-      @backer.make_contribution(@project)
+      @backer.make_contribution(@project, params)
     else
       @project.update(post_params(:description, :goal))
     end
@@ -33,7 +36,7 @@ class ProjectsController < ApplicationController
   def contribute
     @backers = Backer.all
   end
-  #
+
   # def add_contribution
   #
   # end

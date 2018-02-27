@@ -4,4 +4,6 @@
 <p><%= project.description %></p>
 <p><%= project.goal %></p>
 <p><%= project.contributions %></p>
-<% end %>
+<% end %><br>
+
+<%= button_to 'Create New Project', new_project_path, method: "get" %><br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226222147) do
+ActiveRecord::Schema.define(version: 20180227140250) do
 
   create_table "backers", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180226222147) do
     t.integer "backer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contributed_amount"
   end
 
   create_table "projects", force: :cascade do |t|
