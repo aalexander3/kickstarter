@@ -1,0 +1,6 @@
+<h1>Edit <%=@backer.name%>'s Wallet</h1>
+<%= form_for @backer do |f|%>
+  <%= f.label :total_wallet %>
+  <%= f.number_field :total_wallet %>
+  <%= f.submit %>
+<% end %>

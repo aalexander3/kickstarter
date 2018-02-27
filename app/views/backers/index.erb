@@ -1,0 +1,5 @@
+<h1>All Backers</h1>
+<% @backers.each do |backer| %>
+<p><%= link_to backer.name, backer_path(backer), method: 'get' %></p>
+<p>Total wallet: $<%=backer.total_wallet %></p>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_for @project, method: 'patch' do |f|%>
+ <%= f.label :contributions %>
+ <%= f.number_field :contributions %>
+ <%= select("backer", "backer_id", @backers.collect {|b| [ b.name, b.id ] }, {prompt: 'Select Person'})%>
+ <%= f.submit "Contribute" %>
+<% end %>

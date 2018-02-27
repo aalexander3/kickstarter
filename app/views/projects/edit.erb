@@ -1,0 +1,15 @@
+<h1>Update an existing project!</h1>
+
+<%= form_for @project do |f| %>
+<!-- <%= f.label :name %><br>
+<%= f.text_field :name %><br> -->
+
+<%= f.label :description %><br>
+<%= f.text_area :description %><br>
+
+<%= f.label :goal %><br>
+<%= f.number_field :goal %><br>
+<%= f.submit %><br>
+<% end %><br>
+
+<%= button_to 'Delete', project_path(@project), method: :delete %><br>

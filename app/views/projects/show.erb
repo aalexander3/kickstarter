@@ -1,0 +1,8 @@
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+<p>Our goal is: $<%= @project.goal %></p>
+<p>Total contributions: $<%= @project.contributions %></p>
+<p>Total needed: $<%= @project.goal - @project.contributions %></p>
+<p><%= button_to "Contribute", contribute_path(@project), method: "get" %></p>
+<p><%= button_to "See all projects", projects_path, method: "get" %></p>
+<p><%= button_to "Edit project", edit_project_path, method: "get" %></p>

@@ -1,0 +1,2 @@
+class ProjectBackersController < ApplicationController
+end

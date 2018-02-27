@@ -1,0 +1,5 @@
+<h2><%= @backer.name %></h2>
+<p>Total wallet: $<%= @backer.total_wallet %></p>
+<%=button_to "Back to Backers", backers_path, method: 'get'%>
+<%=button_to "Back to Projects", projects_path, method: 'get'%>
+<%=button_to "Update Wallet", edit_backer_path, method: 'get'%>
