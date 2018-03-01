@@ -1,9 +1,19 @@
-<h1>Current Projects</h1>
-<% @projects.each do |project| %>
-<p><%= link_to project.name, project_path(project), method: 'get' %></p>
-<p><%= project.description %></p>
-<p><%= project.goal %></p>
-<p><%= project.contributions %></p>
-<% end %><br>
+<div class="jumbotron text-center">
+  <h1>Current Projects</h1><br>
 
-<%= button_to 'Create New Project', new_project_path, method: "get" %><br>
+    <%= button_to 'Create New Project', new_project_path, method: "get", class: 'btn btn-primary'%>
+
+</div>
+
+<div class="container">
+  <div class="row">
+      <% @projects.each do |project| %>
+      <div class="col-lg-4">
+        <h4><%= link_to project.name, project_path(project), method: 'get' %></h4>
+        <p><%= project.description %></p>
+        <p>Goal: $<%= project.goal %></p>
+        <p>Amount Contributed: $<%= project.contributions %></p><br>
+      </div>
+    <% end %><br>
+  </div>
+</div>
